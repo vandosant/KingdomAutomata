@@ -13,16 +13,22 @@ import {
 } from 'react-native';
 
 class KingdomAutomata extends Component {
+  constructor() {
+    super();
+    this.state = {
+      plants: ['a','b','c']
+    };
+  }
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
           Welcome to KingdomAutomata!
         </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+	<Text>
+	  Plants
+          {this.state.plants.map(plant => <Text>{plant}</Text>)}
+	</Text>
       </View>
     );
   }
