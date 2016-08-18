@@ -9,15 +9,25 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  TextInput,
+  TouchableHighlight
 } from 'react-native';
 
 class KingdomAutomata extends Component {
   constructor() {
     super();
     this.state = {
-      plants: ['a','b','c']
+      plants: ['a','b','c'],
+      newSearch: ''
     };
+  }
+  handleChange(e) {
+    const value = e.target.value;
+    this.setState({newSearch: value});
+  }
+  handlePress() {
+    this.setState({plants: this.state.plants.concat('lol'), newSearch: ''});
   }
   render() {
     return (
@@ -25,10 +35,12 @@ class KingdomAutomata extends Component {
         <Text style={styles.welcome}>
           Welcome to KingdomAutomata!
         </Text>
-	<Text>
-	  Plants
-          {this.state.plants.map(plant => <Text>{plant}</Text>)}
-	</Text>
+	<TouchableHighlight onPress={this.handlePress.bind(this)}>
+          <Text>Search</Text>
+	</TouchableHighlight>
+	<TextInput value={this.state.newSearch} onChange={this.handleChange.bind(this)}/>
+        {this.state.plants.map(plant => <Text>{plant}</Text>)}
+	<Text>{this.state.search}</Text>
       </View>
     );
   }
