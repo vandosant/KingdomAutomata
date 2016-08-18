@@ -22,12 +22,12 @@ class KingdomAutomata extends Component {
       newSearch: ''
     };
   }
-  handleChange(e) {
-    const value = e.target.value;
+  handleChange(value) {
     this.setState({newSearch: value});
   }
   handlePress() {
-    this.setState({plants: this.state.plants.concat('lol'), newSearch: ''});
+    const plants = [...this.state.plants, this.state.newSearch]
+    this.setState({plants, newSearch: ''});
   }
   render() {
     return (
@@ -38,7 +38,7 @@ class KingdomAutomata extends Component {
 	<TouchableHighlight onPress={this.handlePress.bind(this)}>
           <Text>Search</Text>
 	</TouchableHighlight>
-	<TextInput value={this.state.newSearch} onChange={this.handleChange.bind(this)}/>
+	<TextInput value={this.state.newSearch} onChangeText={this.handleChange.bind(this)}/>
         {this.state.plants.map(plant => <Text>{plant}</Text>)}
 	<Text>{this.state.search}</Text>
       </View>
