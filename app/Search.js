@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  Text,
   View,
-  TextInput,
-  TouchableHighlight
+  Text,
+  TextInput
 } from 'react-native';
 
 export class Search extends Component {
