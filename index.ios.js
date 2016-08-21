@@ -19,15 +19,13 @@ class KingdomAutomata extends Component {
     super();
     this.state = {
       plants: ['Common Dandelion','American Alpine Speedwell','Goldenaster'],
-      newSearch: ''
+      newSearch: '',
+      results: []
     };
   }
   handleChange(value) {
-    this.setState({newSearch: value});
-  }
-  handlePress() {
-    const plants = [...this.state.plants, this.state.newSearch]
-    this.setState({plants, newSearch: ''});
+    const nextResults = this.state.plants.filter(plant => plant.indexOf(value) > -1);
+    this.setState({newSearch: value, results: nextResults});
   }
   render() {
     return (
@@ -39,11 +37,7 @@ class KingdomAutomata extends Component {
 	  style={{height: 40}}
 	  placeholder="Type here to search!"
 	/>
-	<TouchableHighlight onPress={this.handlePress.bind(this)}>
-          <Text>Search</Text>
-	</TouchableHighlight>
-        {this.state.plants.map((plant, i) => <Text key={i}>{plant}</Text>)}
-	<Text>{this.state.search}</Text>
+        {this.state.results.map((plant, i) => <Text key={i}>{plant}</Text>)}
       </View>
     );
   }
