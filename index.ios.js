@@ -35,10 +35,13 @@ class KingdomAutomata extends Component {
         <Text style={styles.welcome}>
           Welcome to KingdomAutomata!
         </Text>
+	<TextInput value={this.state.newSearch} onChangeText={this.handleChange.bind(this)}
+	  style={{height: 40}}
+	  placeholder="Type here to search!"
+	/>
 	<TouchableHighlight onPress={this.handlePress.bind(this)}>
           <Text>Search</Text>
 	</TouchableHighlight>
-	<TextInput value={this.state.newSearch} onChangeText={this.handleChange.bind(this)}/>
         {this.state.plants.map(plant => <Text>{plant}</Text>)}
 	<Text>{this.state.search}</Text>
       </View>
