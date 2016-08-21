@@ -7,18 +7,14 @@ import {
 } from 'react-native';
 import { Search } from './app/Search';
 
-class KingdomAutomata extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to KingdomAutomata!
-        </Text>
-	<Search />
-      </View>
-    );
-  }
-}
+const KingdomAutomata = () => (
+  <View style={styles.container}>
+    <Text style={styles.welcome}>
+      Welcome to KingdomAutomata!
+    </Text>
+    <Search />
+  </View>
+)
 
 const styles = StyleSheet.create({
   container: {
