@@ -18,7 +18,7 @@ class KingdomAutomata extends Component {
   constructor() {
     super();
     this.state = {
-      plants: ['a','b','c'],
+      plants: ['Common Dandelion','American Alpine Speedwell','Goldenaster'],
       newSearch: ''
     };
   }
@@ -42,7 +42,7 @@ class KingdomAutomata extends Component {
 	<TouchableHighlight onPress={this.handlePress.bind(this)}>
           <Text>Search</Text>
 	</TouchableHighlight>
-        {this.state.plants.map(plant => <Text>{plant}</Text>)}
+        {this.state.plants.map((plant, i) => <Text key={i}>{plant}</Text>)}
 	<Text>{this.state.search}</Text>
       </View>
     );
