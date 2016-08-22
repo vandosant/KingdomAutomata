@@ -22,7 +22,7 @@ export class Search extends Component {
   }
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <TextInput value={this.state.newSearch} onChangeText={this.handleChange.bind(this)}
           style={styles.input}
           placeholder="Type here to search!"
@@ -34,6 +34,11 @@ export class Search extends Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'rgba(100,0,100,0.9)',
+    padding: 40
+  },
   input: {
     fontSize: 20,
     textAlign: 'center',
