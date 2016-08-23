@@ -35,9 +35,9 @@ export class Search extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'rgba(100,0,100,0.9)',
-    padding: 40
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'hsla(286, 75%, 55%, 0.87)',
   },
   input: {
     fontSize: 20,
