@@ -6,6 +6,7 @@ import {
   Text,
   TextInput
 } from 'react-native';
+import { SearchResults } from './atoms/SearchResults';
 
 export class Search extends Component {
   constructor() {
@@ -27,7 +28,7 @@ export class Search extends Component {
           style={styles.input}
           placeholder="Type here to search!"
         />
-        {this.state.results.map((plant, i) => <Text key={i}>{plant}</Text>)}
+	<SearchResults results={this.state.results} />
       </View>
     )
   }
@@ -35,11 +36,11 @@ export class Search extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: 'column',
     backgroundColor: 'hsla(286, 75%, 55%, 0.87)',
   },
   input: {
+    flex: 1,
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
