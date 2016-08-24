@@ -9,10 +9,12 @@ import { Search } from './app/Search';
 
 const KingdomAutomata = () => (
   <View style={styles.container}>
-    <Text style={styles.welcome}>
-      Welcome to KingdomAutomata!
-    </Text>
-    <Search />
+    <View style={styles.child}>
+      <Text style={styles.headerText}>
+        Welcome to KingdomAutomata!
+      </Text>
+    </View>
+    <View style={styles.child}><Search /></View>
   </View>
 )
 
@@ -21,12 +23,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'hsla(170, 45%, 45%, 1)',
+    backgroundColor: 'hsla(170, 100%, 50%, 1)',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  child: {
+    margin: 10
+  },
+  headerText: {
+    fontSize: 24,
+    fontWeight: 'bold'
   }
 });
 
