@@ -1,15 +1,28 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 
 export const SearchResults = function(props) {
   return (
-    <View style={{
-      flex: 1,
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'flex-start'
-    }}>
-      {props.results.map((plant, i) => <Text style={{width: 100, backgroundColor: 'grey'}}key={i}>{plant}</Text>)}
+    <View style={styles.container}>
+      {props.results.map((plant, i) => { return (
+          <View style={styles.card} key={i}>
+	    <Text style={styles.cardText}>{plant}</Text>
+          </View>
+      )})}
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    justifyContent: 'center',
+    margin: 10
+  },
+  card: {
+    backgroundColor: 'lightgrey',
+    margin: 5
+  },
+  cardText: {
+    fontWeight: '200'
+  }
+})
