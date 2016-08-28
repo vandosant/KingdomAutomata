@@ -12,10 +12,17 @@ export class Search extends Component {
   constructor() {
     super();
     this.state = {
-      plants: ['Common Dandelion','American Alpine Speedwell','Goldenaster'],
+      plants: [],
       newSearch: '',
       results: []
     };
+  }
+  componentWillMount() {
+    fetch("http://localhost:3000/plants", {Accept: "application/json"})
+    .then(res => res.json())
+    .then(data => {
+      this.setState({plants: data});
+    })
   }
   handleChange(value) {
     const nextResults = this.state.plants.filter(plant => plant.indexOf(value) > -1);
@@ -28,7 +35,7 @@ export class Search extends Component {
           style={styles.input}
           placeholder="Type here to search!"
         />
-	<SearchResults results={this.state.results} />
+	{this.state.results.map((result, i) => <SearchResults key={i} result={result} /> )}
       </View>
     )
   }

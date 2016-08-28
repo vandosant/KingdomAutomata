@@ -4,11 +4,9 @@ import { Text, View, StyleSheet } from 'react-native';
 export const SearchResults = function(props) {
   return (
     <View style={styles.container}>
-      {props.results.map((plant, i) => { return (
-          <View style={styles.card} key={i}>
-	    <Text style={styles.cardText}>{plant}</Text>
-          </View>
-      )})}
+      <View style={styles.card}>
+        <Text style={styles.cardText}>{props.result} 🌱</Text>
+      </View>
     </View>
   )
 }

@@ -6,7 +6,6 @@ import {
   View
 } from 'react-native';
 import { Search } from './app/Search';
-import { Fetch } from './app/Fetch';
 
 const KingdomAutomata = () => (
   <View style={styles.container}>
@@ -16,7 +15,6 @@ const KingdomAutomata = () => (
       </Text>
     </View>
     <View style={styles.child}><Search /></View>
-    <Fetch />
   </View>
 )
 
