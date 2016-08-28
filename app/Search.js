@@ -4,7 +4,8 @@ import {
   StyleSheet,
   View,
   Text,
-  TextInput
+  TextInput,
+  TouchableHighlight
 } from 'react-native';
 import { SearchResults } from './atoms/SearchResults';
 
@@ -28,6 +29,17 @@ export class Search extends Component {
     const nextResults = this.state.plants.filter(plant => plant.indexOf(value) > -1);
     this.setState({newSearch: value, results: nextResults});
   }
+  handleClick(result) {
+    fetch("http://localhost:3000/selected", {method: "POST",
+      headers: {'Accept': 'application/json', "Content-Type": "application/json"},
+      body: JSON.stringify({
+        plantId: result
+    })})
+    .then(res => res.json())
+    .then(data => {
+      console.warn(data)
+    })
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -35,7 +47,9 @@ export class Search extends Component {
           style={styles.input}
           placeholder="Type here to search!"
         />
-	{this.state.results.map((result, i) => <SearchResults key={i} result={result} /> )}
+	{this.state.results.map((result, i) => {
+          return <View key={i}><TouchableHighlight onPress={this.handleClick.bind(this, i)}><Text>Add</Text></TouchableHighlight><SearchResults result={result} /></View>
+	})}
       </View>
     )
   }
