@@ -15,7 +15,8 @@ export class Search extends Component {
     this.state = {
       plants: [],
       newSearch: '',
-      results: []
+      results: [],
+      selectedPlants: []
     };
   }
   componentWillMount() {
@@ -26,7 +27,7 @@ export class Search extends Component {
     })
   }
   handleChange(value) {
-    const nextResults = this.state.plants.filter(plant => plant.indexOf(value) > -1);
+    const nextResults = this.state.plants.filter(plant => plant.name.indexOf(value) > -1);
     this.setState({newSearch: value, results: nextResults});
   }
   handleClick(result) {
@@ -37,6 +38,7 @@ export class Search extends Component {
     })})
     .then(res => res.json())
     .then(data => {
+      this.setState({selectedPlants: data})
       console.warn(data)
     })
   }
@@ -48,7 +50,8 @@ export class Search extends Component {
           placeholder="Type here to search!"
         />
 	{this.state.results.map((result, i) => {
-          return <View key={i}><TouchableHighlight onPress={this.handleClick.bind(this, i)}><Text>Add</Text></TouchableHighlight><SearchResults result={result} /></View>
+	  const {name, id} = result;
+          return <View key={id}><TouchableHighlight onPress={this.handleClick.bind(this, id)}><Text>Add</Text></TouchableHighlight><SearchResults result={name} /></View>
 	})}
       </View>
     )
