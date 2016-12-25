@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react'
 import {
   AppRegistry,
   StyleSheet,
-  Text,
   View
-} from 'react-native';
-import { Search } from './app/Search';
-import { Camera } from './app/Camera';
+} from 'react-native'
+import { Camera } from './app/Camera'
 
 const KingdomAutomata = () => (
   <View style={styles.container}>
@@ -19,7 +17,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'hsla(170, 100%, 50%, 1)',
+    backgroundColor: 'hsla(170, 100%, 50%, 1)'
   },
   child: {
     margin: 10
@@ -28,6 +26,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold'
   }
-});
+})
 
-AppRegistry.registerComponent('KingdomAutomata', () => KingdomAutomata);
+AppRegistry.registerComponent('KingdomAutomata', () => KingdomAutomata)

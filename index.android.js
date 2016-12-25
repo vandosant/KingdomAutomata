@@ -4,7 +4,7 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
   AppRegistry,
   StyleSheet,
@@ -12,37 +12,37 @@ import {
   View,
   TextInput,
   TouchableHighlight
-} from 'react-native';
+} from 'react-native'
 
 class KingdomAutomata extends Component {
-  constructor() {
-    super();
+  constructor () {
+    super()
     this.state = {
-      plants: ['a','b','c'],
+      plants: ['a', 'b', 'c'],
       newSearch: ''
-    };
+    }
   }
-  handleChange(value) {
-    this.setState({newSearch: value});
+  handleChange (value) {
+    this.setState({newSearch: value})
   }
-  handlePress() {
+  handlePress () {
     const plants = [...this.state.plants, this.state.newSearch]
-    this.setState({plants, newSearch: ''});
+    this.setState({plants, newSearch: ''})
   }
-  render() {
+  render () {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
           Welcome to KingdomAutomata!
         </Text>
-	<TouchableHighlight onPress={this.handlePress.bind(this)}>
+        <TouchableHighlight onPress={this.handlePress.bind(this)}>
           <Text>Search</Text>
-	</TouchableHighlight>
-	<TextInput value={this.state.newSearch} onChangeText={this.handleChange.bind(this)}/>
+        </TouchableHighlight>
+        <TextInput value={this.state.newSearch} onChangeText={this.handleChange.bind(this)} />
         {this.state.plants.map(plant => <Text>{plant}</Text>)}
-	<Text>{this.state.search}</Text>
+        <Text>{this.state.search}</Text>
       </View>
-    );
+    )
   }
 }
 

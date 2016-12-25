@@ -4,11 +4,15 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "start:server": "json-server db.json"
+    "start:server": "json-server db.json",
+    "lint": "standard"
   },
   "dependencies": {
     "react": "15.4.1",
     "react-native": "0.39.0",
     "react-native-camera": "^0.4.0"
+  },
+  "devDependencies": {
+    "standard": "^8.6.0"
   }
 }
