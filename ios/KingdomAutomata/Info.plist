@@ -50,5 +50,9 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Used to identifyplants</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Used to identify plants</string>
 </dict>
 </plist>

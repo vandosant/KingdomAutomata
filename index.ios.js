@@ -6,10 +6,11 @@ import {
   View
 } from 'react-native';
 import { Search } from './app/Search';
+import { Camera } from './app/Camera';
 
 const KingdomAutomata = () => (
   <View style={styles.container}>
-    <View style={styles.child}><Search /></View>
+    <View style={styles.child}><Camera /></View>
   </View>
 )
 
