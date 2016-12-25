@@ -9,11 +9,6 @@ import { Search } from './app/Search';
 
 const KingdomAutomata = () => (
   <View style={styles.container}>
-    <View style={styles.child}>
-      <Text style={styles.headerText}>
-        Welcome to KingdomAutomata!
-      </Text>
-    </View>
     <View style={styles.child}><Search /></View>
   </View>
 )
