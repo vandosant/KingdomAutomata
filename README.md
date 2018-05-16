@@ -1,4 +1,4 @@
-***KingdomAutomata*** - multiplatform application for identifying native plant species
+**KingdomAutomata** - multiplatform application for identifying native plant species
 
 ## API
 1. **Change to the directory:**
