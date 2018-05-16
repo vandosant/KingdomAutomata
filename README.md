@@ -1,14 +1,17 @@
-# KingdomAutomata
+***KingdomAutomata*** - multiplatform application for identifying native plant species
 
 ## API
-`cd plant-api`
+1. ***Change to the directory:***
+```bash
+cd plant-api
+```
 
-### Run locally
+2. ***Run locally:***
 ```bash
 lein ring server-headless
 ```
 
-### Deploy to AWS
+3. ***Deploy to AWS:***
 ```bash
 lein lambda deploy production
 ```
