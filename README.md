@@ -3,7 +3,12 @@
 ## API
 `cd plant-api`
 
-- Run locally
-  - `lein ring server-headless`
-- Deploy
-  - `lein lambda deploy production`
+### Run locally
+```bash
+lein ring server-headless
+```
+
+### Deploy to AWS
+```bash
+lein lambda deploy production
+```
