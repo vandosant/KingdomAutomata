@@ -5,9 +5,9 @@
 
 (deftest test-app
   (testing "main route"
-    (let [response (app (mock/request :get "/hello"))]
+    (let [response (app (mock/request :get "/plants"))]
       (is (= (:status response) 200))
-      (is (= (:body response) "{\"message\":\"Hello World\"}"))))
+      (is (= (:body response) "[\"horsemint\",\"snowberry\",\"yarrow\"]"))))
 
   (testing "not-found route"
     (let [response (app (mock/request :get "/invalid"))]
