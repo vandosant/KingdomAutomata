@@ -32,3 +32,6 @@ lein figwheel
 ```bash
 tail -f figwheel_server.log
 ```
+
+4. **Check dependencies:**
+[lein ancient](https://github.com/xsc/lein-ancient)
