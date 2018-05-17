@@ -19,5 +19,5 @@
   :lambda {:function {:name "plant-api"
                       :handler "plant-api.lambda.LambdaFn"}
            :api-gateway {:name "plant-api"}
-           :stages {"production" {:warmup {:enable true}}
+           :stages {"production" {:warmup {:enable false}}
                     "staging"    {}}})
