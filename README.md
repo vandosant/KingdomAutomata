@@ -15,3 +15,20 @@ lein ring server-headless
 ```bash
 lein lambda deploy production
 ```
+
+
+## CLIENT
+1. **Change to the directory:**
+```bash
+cd web
+```
+
+2. **Run app:**
+```bash
+lein figwheel
+```
+
+3. **Monitor build:**
+```bash
+tail -f figwheel_server.log
+```
