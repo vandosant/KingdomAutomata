@@ -7,15 +7,18 @@
 ;; State
 
 (def plant (r/atom ""))
+(def scientific-name (r/atom ""))
 
-(def api-url "https://2n1ft8kc6i.execute-api.us-east-1.amazonaws.com/production")
+(def api-url "http://localhost:3000")
 
 ;; -------------------------
 ;; Actions
 
 (defn get-plant []
   (ajax/GET (str api-url "/plants/" @plant)
-            {:handler #(reset! plant "")}))
+            {:handler #(do
+                         (reset! scientific-name (str %))
+                         (reset! plant ""))}))
 
 ;; -------------------------
 ;; Views
@@ -34,6 +37,7 @@
   [:div
      [:h2 "Welcome to KingdomAutomata"]
      [:p @plant]
+     [:p @scientific-name]
      [plant-entry]
      [plant-submit]])
 
