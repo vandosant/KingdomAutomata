@@ -7,6 +7,7 @@
 ;; State
 
 (def plant (r/atom ""))
+(def plants (r/atom []))
 (def scientific-name (r/atom ""))
 
 (def api-url "http://localhost:3000")
@@ -16,9 +17,12 @@
 
 (defn get-plant []
   (ajax/GET (str api-url "/plants/" @plant)
-            {:handler #(do
-                         (reset! scientific-name (str %))
-                         (reset! plant ""))}))
+            {:handler #(do (reset! scientific-name (str %))
+                           (reset! plant ""))}))
+
+(defn get-plants []
+  (ajax/GET (str api-url "/plants")
+            {:handler #(reset! plants %)}))
 
 ;; -------------------------
 ;; Views
@@ -38,6 +42,7 @@
      [:h2 "Welcome to KingdomAutomata"]
      [:p @plant]
      [:p @scientific-name]
+     [:p (str @plants)]
      [plant-entry]
      [plant-submit]])
 
@@ -48,4 +53,5 @@
   (r/render [home-page] (.getElementById js/document "app")))
 
 (defn init! []
+  (get-plants)
   (mount-root))
