@@ -5,6 +5,7 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [compojure "1.6.0"]
                  [ring/ring-defaults "0.3.1"]
+                 [ring-cors "0.1.12"]
                  [ring/ring-json "0.4.0"]
                  [uswitch/lambada "0.1.2"]
                  [cheshire "5.7.1"]
